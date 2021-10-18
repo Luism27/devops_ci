@@ -96,7 +96,6 @@ public class BasicApplicationTests {
         Mockito.when(irm.InvoiceRequestToInvoice(new InvoiceRequest())).thenReturn(mockdto);
         InvoiceResponse invoiceResponse = new InvoiceResponse();
         invoiceResponse.setInvoiceId(1);
-        //test 1212
         Mockito.when(irspm.InvoiceToInvoiceRespose(mockdto)).thenReturn(invoiceResponse);
         this.mockMvc.perform(get("/billing/{id}", mockdto.getId()).header("Authorization", "Basic " + encoding)
                 .accept(MediaType.APPLICATION_JSON)               
